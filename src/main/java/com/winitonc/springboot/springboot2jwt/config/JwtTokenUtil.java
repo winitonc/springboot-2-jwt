@@ -15,11 +15,10 @@ import java.util.function.Function;
 @Component
 public class JwtTokenUtil {
 
-    @Value("${jwt.secret}")
-    private String secret;
+    public static final long JWT_TOKEN_VALIDITY = 5L * 60L * 60L;
 
     @Value("${jwt.secret}")
-    public static final long JWT_TOKEN_VALIDITY = 5L * 60L * 60L;
+    private String secret;
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
